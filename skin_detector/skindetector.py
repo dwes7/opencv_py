@@ -25,7 +25,7 @@ else:
     camera = cv2.VideoCapture(args["video"])
 
 
-# keep looping over the grames in the video
+# keep looping over the frames in the video
 
 while True:
 
