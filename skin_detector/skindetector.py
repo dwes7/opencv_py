@@ -46,7 +46,7 @@ while True:
     skinMask = cv2.inRange(converted, lower, upper)
 
     # apply a series of erosions and dilations to the mask
-    # using an elliptical kernel
+    # using an elliptical kernel to remove false-positive regions of the skin
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11, 11))
     skinMask = cv2.erode(skinMask, kernel, iterations=2)
     skinMask = cv2.dilate(skinMask, kernel, iterations=2)
