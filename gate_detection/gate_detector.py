@@ -13,7 +13,7 @@ def getthresholdedimg(hsv):
         'Hue_High', 'Trackbars'), cv2.getTrackbarPos('Saturation_High', 'Trackbars'), cv2.getTrackbarPos('Value_High',
                                                                                                          'Trackbars'))))
 
-
+    print type(threshImg)
     return threshImg
 
 
@@ -21,7 +21,7 @@ def getTrackValue(value):
     return value
 
 
-c = cv2.VideoCapture(1)
+c = cv2.VideoCapture(0)
 width, height = c.get(3), c.get(4)
 print "frame width and height : ", width, height
 
@@ -56,7 +56,7 @@ while (1):
         if (abs(h * w)**2) > cv2.getTrackbarPos('Box filter', 'Trackbars'):
 
             cv2.rectangle(frame, (x, y), (x + w, y + h), [0, 0, 255], 2)
-            print "******tennis ball detected!!***********"
+#            print "******tennis ball detected!!***********"
 
     if cv2.getTrackbarPos('Caliberate', 'Trackbars') == 1:
         cv2.imshow('Output', thrImg)
