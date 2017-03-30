@@ -13,17 +13,23 @@ val_normalized = val_cropped / length(val_cropped);
 
 
 figure(1)
-hist3([hue_cropped;sat_cropped], [50 50]);
+hs_crop = [hue_cropped,sat_cropped];
+hs_norm = [hue_normalized, sat_normalized];
+subplot(2, 1, 1)
+hist3(hs_crop, [50 50]);
 title("hue vs sat")
-% 
-% figire(2)
-% hist3([hue_normalized;val_normalized], [50 50]);
-% title("hue vs val")
-% 
-% 
-% figure(3)
-% hist3([val_normalized;sat_normalized], [50 50]);
-% title("val vs sat")
+subplot(2,1, 2)
+hist3(hs_norm, [50 50]);
 
 
-% hist3([data1;data2], [50 50]);
+figure(2)
+hv_norm = [hue_normalized, val_normalized];
+hist3(hv_norm, [50 50]);
+title("hue vs val")
+
+
+figure(3)
+vs_norm = [val_normalized,sat_normalized];
+hist3(vs_norm, [50 50]);
+title("val vs sat")
+fi
