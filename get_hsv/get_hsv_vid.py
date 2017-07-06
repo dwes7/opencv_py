@@ -51,6 +51,8 @@ cv2.setMouseCallback("Frame", click_and_crop)
 
 isReset = False
 
+counter = 0
+
 while True:
 
     # grab the current frame
@@ -80,8 +82,10 @@ while True:
         break
     cv2.imshow("Frame", frame)
 
+    counter += 1
 
-    if len(refPt) == 2:
+    if len(refPt) == 2 and counter == 15:
+        counter = 0
         roi = clone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
         blur = cv2.medianBlur(roi, 3)
         erode = cv2.erode(blur, None, iterations=2)

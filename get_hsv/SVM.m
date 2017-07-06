@@ -33,3 +33,4 @@ vs_norm = [val_normalized,sat_normalized];
 hist3(vs_norm, [50 50]);
 title("val vs sat")
 fi
+
