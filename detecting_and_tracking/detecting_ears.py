@@ -10,7 +10,7 @@ if left_ear_cascade.empty():
 if right_ear_cascade.empty():
     raise IOError('Unable to load the right ear cascade classifier xml file')
 
-img = cv2.imread('left_ear.jpg')
+img = cv2.imread('right_ear.jpg')
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
